@@ -14,9 +14,9 @@ scale = Vector2(0.824643, 0.4675)
 texture = ExtResource("1_wj3nn")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 462.0
+offset_left = 463.0
 offset_top = 521.0
-offset_right = 499.0
+offset_right = 500.0
 offset_bottom = 529.0
 rotation = -0.0141489
 scale = Vector2(6.22036, 5.11911)

@@ -8,7 +8,7 @@
 offset_right = 1152.0
 offset_bottom = 647.0
 
-[node name="2" type="Sprite2D" parent="."]
+[node name="2" type="Sprite2D" parent="ColorRect"]
 position = Vector2(579, 324)
 scale = Vector2(0.828571, 0.464286)
 texture = ExtResource("1_05cvv")
