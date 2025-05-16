@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccdq1ijfhkesr"]
+
+[ext_resource type="Texture2D" uid="uid://b63jmoh2ftxba" path="res://Sprites/Space_BG (2 frames) (64 x 64).png" id="1_56rjb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(63, 33)
+texture = ExtResource("1_56rjb")

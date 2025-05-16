@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7y4qk2s11o60"]
+
+[ext_resource type="Texture2D" uid="uid://brqdkhjrtujqt" path="res://Tiles/1.png" id="1_wj3nn"]
+
+[node name="Capa" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 647.0
+
+[node name="1" type="Sprite2D" parent="ColorRect"]
+position = Vector2(575.75, 324.75)
+scale = Vector2(0.824643, 0.4675)
+texture = ExtResource("1_wj3nn")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 521.0
+offset_right = 499.0
+offset_bottom = 529.0
+rotation = -0.0141489
+scale = Vector2(6.22036, 5.11911)
