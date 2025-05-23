@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqtcspcobp84b"]
+[gd_scene load_steps=5 format=3 uid="uid://cqtcspcobp84b"]
 
+[ext_resource type="Script" uid="uid://bxt3ud6652bmo" path="res://Entities/player.gd" id="1_gb1tc"]
 [ext_resource type="Texture2D" uid="uid://cpsijvsgl0fjf" path="res://Sprites/Mini Pixel Pack 3/UI objects/Player_life_icon (16 x 16).png" id="1_tcnsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gb1tc"]
@@ -17,6 +18,8 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_gb1tc")
+max_jump_count = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gb1tc")
