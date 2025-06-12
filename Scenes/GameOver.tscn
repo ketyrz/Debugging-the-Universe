@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy84jw42s2dml"]
+
+[ext_resource type="Script" uid="uid://ehlymbvx0gr1" path="res://Scripts/GameOver.gd" id="1_k52d1"]
+[ext_resource type="Texture2D" uid="uid://4r4swgqercyf" path="res://Sprites/ImagemGameOver.jpeg" id="2_ktc4i"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k52d1")
+
+[node name="BotaoJogarNovamente" type="Button" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 375.0
+offset_right = 632.0
+offset_bottom = 442.0
+
+[node name="BotaoTelaInicial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 457.0
+offset_right = 398.0
+offset_bottom = 520.0
+
+[node name="BotaoCreditos" type="Button" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 461.0
+offset_right = 670.0
+offset_bottom = 522.0
+
+[node name="ImagemGameOver" type="Sprite2D" parent="."]
+position = Vector2(400.5, 299.5)
+scale = Vector2(0.782227, 0.586914)
+texture = ExtResource("2_ktc4i")
+
+[connection signal="pressed" from="BotaoJogarNovamente" to="." method="_on_botao_jogar_novamente_pressed"]
+[connection signal="pressed" from="BotaoTelaInicial" to="." method="_on_botao_tela_inicial_pressed"]
+[connection signal="pressed" from="BotaoCreditos" to="." method="_on_botao_creditos_pressed"]

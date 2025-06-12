@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqsdoedf2runs"]
+
+[ext_resource type="Texture2D" uid="uid://bg5suk14f6ykx" path="res://Sprites/Player_life_icon (16 x 16).png" id="1_cpxei"]
+[ext_resource type="Script" uid="uid://db75abmjv5hw1" path="res://Scripts/Foguete.gd" id="1_gxb7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxb7h"]
+size = Vector2(44, 36)
+
+[node name="Foguete" type="CharacterBody2D"]
+script = ExtResource("1_gxb7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(4.23438, 4.04688)
+texture = ExtResource("1_cpxei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gxb7h")

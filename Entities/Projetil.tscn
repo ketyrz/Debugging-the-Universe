@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfj0kkviscqmh"]
+
+[ext_resource type="Script" uid="uid://b3hpjut4r655t" path="res://Scripts/Projetil.gd" id="1_3eo1k"]
+[ext_resource type="Texture2D" uid="uid://ulayeqywk1pn" path="res://Sprites/Player_charged_beam (16 x 16).png" id="2_tc5ln"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o43m2"]
+radius = 6.0
+height = 26.0
+
+[node name="Projetil" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_3eo1k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(2.35714, 1.875)
+texture = ExtResource("2_tc5ln")
+region_enabled = true
+region_rect = Rect2(0, 0, 7.78557, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o43m2")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

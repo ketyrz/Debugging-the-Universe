@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://cloltbx8b5vps"]
+
+[ext_resource type="Script" uid="uid://bf8u3ti1v2yrf" path="res://Scripts/Fase3.gd" id="1_vyqvm"]
+[ext_resource type="Texture2D" uid="uid://dce0cam8kw35l" path="res://Sprites/ImagemDeFundo.jpeg" id="2_moj6w"]
+[ext_resource type="Texture2D" uid="uid://b5e6kufhdfmge" path="res://Sprites/Lips (16 x 16).png" id="3_lna8h"]
+[ext_resource type="Script" uid="uid://cusqbp1nqchsb" path="res://Scripts/Inimigo.gd" id="4_mmeoy"]
+[ext_resource type="PackedScene" uid="uid://dqsdoedf2runs" path="res://Entities/Foguete.tscn" id="5_2k5v8"]
+[ext_resource type="Texture2D" uid="uid://c88n2n7acwrl2" path="res://Sprites/Player_charged_donut_shot (16 x 16).png" id="6_3v2ef"]
+[ext_resource type="Script" uid="uid://bpw6j1rch2rx" path="res://Scripts/PortalFase3.gd" id="7_4a7rn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mv3b"]
+radius = 7.8643
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_al0bo"]
+radius = 5.5258
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyqvm"]
+size = Vector2(350, 618)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moj6w"]
+size = Vector2(359, 620)
+
+[node name="Fase3" type="Node2D"]
+script = ExtResource("1_vyqvm")
+
+[node name="ImagemDeFundo" type="Sprite2D" parent="."]
+position = Vector2(399.5, 301)
+scale = Vector2(0.782227, 0.587891)
+texture = ExtResource("2_moj6w")
+
+[node name="Inimigo" type="Sprite2D" parent="."]
+position = Vector2(396, 300)
+scale = Vector2(3.83333, 3.875)
+texture = ExtResource("3_lna8h")
+region_enabled = true
+region_rect = Rect2(0, 0, 15.9885, 16)
+
+[node name="Area2D" type="Area2D" parent="Inimigo"]
+collision_layer = 2
+script = ExtResource("4_mmeoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D"]
+shape = SubResource("CircleShape2D_6mv3b")
+debug_color = Color(0.992537, 0, 0.250633, 0.42)
+
+[node name="Portal" type="Sprite2D" parent="."]
+position = Vector2(396, 120)
+scale = Vector2(5.56667, 5.03125)
+texture = ExtResource("6_3v2ef")
+region_enabled = true
+region_rect = Rect2(32.1647, 0, 15.7683, 16)
+
+[node name="Area2D" type="Area2D" parent="Portal"]
+script = ExtResource("7_4a7rn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Area2D"]
+shape = SubResource("CircleShape2D_al0bo")
+debug_color = Color(0.00724442, 0.651222, 0, 0.42)
+
+[node name="Foguete" parent="." instance=ExtResource("5_2k5v8")]
+position = Vector2(396, 480)
+
+[node name="ParedeEsquerda" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeEsquerda"]
+position = Vector2(166, 299)
+shape = SubResource("RectangleShape2D_vyqvm")
+debug_color = Color(0.826553, 0.00155982, 0.952678, 0.42)
+
+[node name="ParedeDireita" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeDireita"]
+position = Vector2(627, 300)
+shape = SubResource("RectangleShape2D_moj6w")
+debug_color = Color(0.810727, 0.00214605, 0.985275, 0.42)
+
+[connection signal="area_entered" from="Inimigo/Area2D" to="Inimigo/Area2D" method="_on_area_entered"]
+[connection signal="body_shape_entered" from="Inimigo/Area2D" to="Inimigo/Area2D" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/Area2D" to="Portal/Area2D" method="_on_body_shape_entered"]

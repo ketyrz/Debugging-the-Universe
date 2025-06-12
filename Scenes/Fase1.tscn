@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://blfkoobuad3dr"]
+
+[ext_resource type="Texture2D" uid="uid://dce0cam8kw35l" path="res://Sprites/ImagemDeFundo.jpeg" id="1_olbvu"]
+[ext_resource type="PackedScene" uid="uid://dqsdoedf2runs" path="res://Entities/Foguete.tscn" id="2_oa3l7"]
+[ext_resource type="Texture2D" uid="uid://c88n2n7acwrl2" path="res://Sprites/Player_charged_donut_shot (16 x 16).png" id="3_k332x"]
+[ext_resource type="Script" uid="uid://bdw8hluii6ho7" path="res://Scripts/PortalFase1.gd" id="4_y8ihj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wj8m"]
+radius = 5.5258
+
+[node name="Fase1" type="Node2D"]
+
+[node name="ImagemDeFundo" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(0.78125, 0.585938)
+texture = ExtResource("1_olbvu")
+
+[node name="Foguete" parent="." instance=ExtResource("2_oa3l7")]
+position = Vector2(396, 480)
+
+[node name="Portal" type="Sprite2D" parent="."]
+position = Vector2(396, 120)
+scale = Vector2(5.56667, 5.03125)
+texture = ExtResource("3_k332x")
+region_enabled = true
+region_rect = Rect2(32.1647, 0, 15.7683, 16)
+
+[node name="Area2D" type="Area2D" parent="Portal"]
+script = ExtResource("4_y8ihj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Area2D"]
+shape = SubResource("CircleShape2D_1wj8m")
+debug_color = Color(0.115869, 0.647464, 0, 0.42)
+
+[connection signal="body_shape_entered" from="Portal/Area2D" to="Portal/Area2D" method="_on_body_shape_entered"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://peewnjvw1m84"]
+
+[ext_resource type="Script" uid="uid://djmnp52r2var0" path="res://Scripts/TelaInicial.gd" id="1_y5bn2"]
+[ext_resource type="Texture2D" uid="uid://dw4ce3as27kmj" path="res://Sprites/ImagemTelaInicial.jpeg" id="2_nwdto"]
+
+[node name="TelaInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y5bn2")
+
+[node name="BotaoJogar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 435.0
+offset_right = 378.0
+offset_bottom = 502.0
+text = "Jogar"
+
+[node name="BotaoTutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 434.0
+offset_right = 642.0
+offset_bottom = 502.0
+text = "Tutorial"
+
+[node name="BotaoCreditos" type="Button" parent="."]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 515.0
+offset_right = 502.0
+offset_bottom = 571.0
+
+[node name="ImagemTelaInicial" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(0.78125, 0.587891)
+texture = ExtResource("2_nwdto")
+
+[connection signal="pressed" from="BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="BotaoTutorial" to="." method="_on_botao_tutorial_pressed"]
+[connection signal="pressed" from="BotaoCreditos" to="." method="_on_botao_creditos_pressed"]

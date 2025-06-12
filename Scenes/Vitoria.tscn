@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnf2hp84ttfh3"]
+
+[ext_resource type="Script" uid="uid://cpj6a1laxcnxg" path="res://Scripts/Vitoria.gd" id="1_1dlqx"]
+[ext_resource type="Texture2D" uid="uid://djyyedlb0noyk" path="res://Sprites/ImagemVitoria.jpeg" id="2_mw84i"]
+
+[node name="Vitoria" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1dlqx")
+
+[node name="BotaoJogarNovamente" type="Button" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 403.0
+offset_right = 643.0
+offset_bottom = 467.0
+
+[node name="BotaoTelaInicial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 482.0
+offset_right = 393.0
+offset_bottom = 537.0
+
+[node name="BotaoCreditos" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 482.0
+offset_right = 629.0
+offset_bottom = 537.0
+
+[node name="ImagemVitoria" type="Sprite2D" parent="."]
+position = Vector2(400, 300.5)
+scale = Vector2(0.78125, 0.586914)
+texture = ExtResource("2_mw84i")
+
+[connection signal="pressed" from="BotaoJogarNovamente" to="." method="_on_botao_jogar_novamente_pressed"]
+[connection signal="pressed" from="BotaoTelaInicial" to="." method="_on_botao_tela_inicial_pressed"]
+[connection signal="pressed" from="BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
