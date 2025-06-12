@@ -14,24 +14,24 @@ script = ExtResource("1_k52d1")
 
 [node name="BotaoJogarNovamente" type="Button" parent="."]
 layout_mode = 0
-offset_left = 165.0
-offset_top = 375.0
-offset_right = 632.0
-offset_bottom = 442.0
+offset_left = 175.0
+offset_top = 370.0
+offset_right = 628.0
+offset_bottom = 438.0
 
 [node name="BotaoTelaInicial" type="Button" parent="."]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 457.0
+offset_left = 136.0
+offset_top = 452.0
 offset_right = 398.0
-offset_bottom = 520.0
+offset_bottom = 516.0
 
 [node name="BotaoCreditos" type="Button" parent="."]
 layout_mode = 0
 offset_left = 417.0
-offset_top = 461.0
-offset_right = 670.0
-offset_bottom = 522.0
+offset_top = 453.0
+offset_right = 665.0
+offset_bottom = 517.0
 
 [node name="ImagemGameOver" type="Sprite2D" parent="."]
 position = Vector2(400.5, 299.5)
