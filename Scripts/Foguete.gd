@@ -34,3 +34,4 @@ func shoot():
 	var proj = projectile_scene.instantiate()
 	proj.position = position
 	get_parent().add_child(proj)
+	
