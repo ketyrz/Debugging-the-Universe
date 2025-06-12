@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2a4xxdqsiyra"]
+[gd_scene load_steps=3 format=3 uid="uid://b2a4xxdqsiyra"]
 
 [ext_resource type="Script" uid="uid://dpy475empliad" path="res://Scripts/TelaTutorial.gd" id="1_odc1i"]
+[ext_resource type="Texture2D" uid="uid://8wfkay8wvshr" path="res://Sprites/ImagemTutorial.png" id="2_60wd1"]
 
 [node name="TelaTutorial" type="Control"]
 layout_mode = 3
@@ -13,17 +14,22 @@ script = ExtResource("1_odc1i")
 
 [node name="BotaoJogar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 155.0
-offset_right = 289.0
-offset_bottom = 237.0
+offset_left = 205.0
+offset_top = 336.0
+offset_right = 349.0
+offset_bottom = 374.0
 
 [node name="BotaoTelaInicial" type="Button" parent="."]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 159.0
-offset_right = 638.0
-offset_bottom = 319.0
+offset_left = 379.0
+offset_top = 334.0
+offset_right = 599.0
+offset_bottom = 372.0
+
+[node name="ImagemTutorial" type="Sprite2D" parent="."]
+position = Vector2(400.5, 300)
+scale = Vector2(0.782227, 0.585938)
+texture = ExtResource("2_60wd1")
 
 [connection signal="pressed" from="BotaoJogar" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="BotaoTelaInicial" to="." method="_on_botao_tela_inicial_pressed"]
