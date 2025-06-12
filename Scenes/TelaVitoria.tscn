@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnf2hp84ttfh3"]
 
-[ext_resource type="Script" uid="uid://cpj6a1laxcnxg" path="res://Scripts/Vitoria.gd" id="1_1dlqx"]
+[ext_resource type="Script" uid="uid://cpj6a1laxcnxg" path="res://Scripts/TelaVitoria.gd" id="1_1dlqx"]
 [ext_resource type="Texture2D" uid="uid://djyyedlb0noyk" path="res://Sprites/ImagemVitoria.jpeg" id="2_mw84i"]
 
 [node name="Vitoria" type="Control"]

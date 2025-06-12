@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dy84jw42s2dml"]
 
-[ext_resource type="Script" uid="uid://ehlymbvx0gr1" path="res://Scripts/GameOver.gd" id="1_k52d1"]
+[ext_resource type="Script" uid="uid://ehlymbvx0gr1" path="res://Scripts/TelaGameOver.gd" id="1_k52d1"]
 [ext_resource type="Texture2D" uid="uid://4r4swgqercyf" path="res://Sprites/ImagemGameOver.jpeg" id="2_ktc4i"]
 
 [node name="GameOver" type="Control"]

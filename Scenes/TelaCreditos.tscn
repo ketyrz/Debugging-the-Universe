@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjdsuleixoq3o"]
 
-[ext_resource type="Script" uid="uid://bkoxrxievpsyk" path="res://TelaCreditos.gd" id="1_npo8r"]
+[ext_resource type="Script" uid="uid://bkoxrxievpsyk" path="res://Scripts/TelaCreditos.gd" id="1_npo8r"]
 [ext_resource type="Texture2D" uid="uid://daxyd013b4toc" path="res://Sprites/ImagemCreditos.jpeg" id="1_vedn4"]
 
 [node name="TelaCreditos" type="Control"]
