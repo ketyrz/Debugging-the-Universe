@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyjqeds0s1kxn"]
+[gd_scene load_steps=17 format=3 uid="uid://dyjqeds0s1kxn"]
 
 [ext_resource type="Texture2D" uid="uid://dce0cam8kw35l" path="res://Sprites/ImagemDeFundo.jpeg" id="1_u0i0j"]
 [ext_resource type="Texture2D" uid="uid://d2yfkw7lwnlkb" path="res://Sprites/Enemy_projectile (16 x 16).png" id="2_6m0w8"]
@@ -21,6 +21,18 @@ size = Vector2(6.03076, 5.869)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jnsp1"]
 radius = 5.5258
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0i0j"]
+size = Vector2(20, 620)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m0w8"]
+size = Vector2(20, 619)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovq1b"]
+size = Vector2(817, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxwfp"]
+size = Vector2(818, 20)
+
 [node name="Fase2" type="Node2D"]
 
 [node name="ImagemDeFundo" type="Sprite2D" parent="."]
@@ -40,7 +52,6 @@ script = ExtResource("3_ovq1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculo1/Area2D"]
 position = Vector2(-0.324324, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dv3c2")
 debug_color = Color(0.986354, 0, 0.324468, 0.42)
 
@@ -56,7 +67,6 @@ script = ExtResource("4_gxwfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculo2/Area2D"]
 position = Vector2(-0.707859, -0.0941162)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_73kgi")
 debug_color = Color(0.999073, 0.0259214, 0, 0.42)
 
@@ -72,12 +82,8 @@ script = ExtResource("5_yawb4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculo3/Area2D"]
 position = Vector2(-7.62939e-06, 3.8147e-06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2ivu1")
 debug_color = Color(0.984728, 0, 0.340758, 0.42)
-
-[node name="Foguete" parent="." instance=ExtResource("6_dvt13")]
-position = Vector2(396, 480)
 
 [node name="Portal" type="Sprite2D" parent="."]
 position = Vector2(396, 120)
@@ -92,6 +98,37 @@ script = ExtResource("8_psxn2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Area2D"]
 shape = SubResource("CircleShape2D_jnsp1")
 debug_color = Color(2.40654e-08, 0.647415, 0.211686, 0.42)
+
+[node name="Foguete" parent="." instance=ExtResource("6_dvt13")]
+position = Vector2(396, 480)
+
+[node name="ParedeEsquerda" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeEsquerda"]
+position = Vector2(0, 300)
+shape = SubResource("RectangleShape2D_u0i0j")
+debug_color = Color(0.811765, 0.00392157, 0.984314, 0.419608)
+
+[node name="ParedeDireita" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeDireita"]
+position = Vector2(799, 301)
+shape = SubResource("RectangleShape2D_6m0w8")
+debug_color = Color(0.811765, 0.00392157, 0.984314, 0.419608)
+
+[node name="Teto" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teto"]
+position = Vector2(398.5, 0)
+shape = SubResource("RectangleShape2D_ovq1b")
+debug_color = Color(0.811765, 0.00392157, 0.984314, 0.419608)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(400, 600)
+shape = SubResource("RectangleShape2D_gxwfp")
+debug_color = Color(0.811765, 0.00392157, 0.984314, 0.419608)
 
 [connection signal="body_shape_entered" from="Obstaculo1/Area2D" to="Obstaculo1/Area2D" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Obstaculo2/Area2D" to="Obstaculo2/Area2D" method="_on_body_shape_entered"]

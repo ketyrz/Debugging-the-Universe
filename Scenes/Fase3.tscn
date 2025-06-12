@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cloltbx8b5vps"]
+[gd_scene load_steps=14 format=3 uid="uid://cloltbx8b5vps"]
 
 [ext_resource type="Script" uid="uid://bf8u3ti1v2yrf" path="res://Scripts/Fase3.gd" id="1_vyqvm"]
 [ext_resource type="Texture2D" uid="uid://dce0cam8kw35l" path="res://Sprites/ImagemDeFundo.jpeg" id="2_moj6w"]
@@ -19,6 +19,12 @@ size = Vector2(350, 618)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moj6w"]
 size = Vector2(359, 620)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lna8h"]
+size = Vector2(817, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmeoy"]
+size = Vector2(815, 20)
 
 [node name="Fase3" type="Node2D"]
 script = ExtResource("1_vyqvm")
@@ -73,6 +79,20 @@ debug_color = Color(0.826553, 0.00155982, 0.952678, 0.42)
 position = Vector2(627, 300)
 shape = SubResource("RectangleShape2D_moj6w")
 debug_color = Color(0.810727, 0.00214605, 0.985275, 0.42)
+
+[node name="Teto" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teto"]
+position = Vector2(398.5, 0)
+shape = SubResource("RectangleShape2D_lna8h")
+debug_color = Color(0.811765, 0.00392157, 0.984314, 0.419608)
+
+[node name="Chao" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(398, 602)
+shape = SubResource("RectangleShape2D_mmeoy")
+debug_color = Color(0.811765, 0.00392157, 0.984314, 0.419608)
 
 [connection signal="area_entered" from="Inimigo/Area2D" to="Inimigo/Area2D" method="_on_area_entered"]
 [connection signal="body_shape_entered" from="Inimigo/Area2D" to="Inimigo/Area2D" method="_on_body_shape_entered"]
